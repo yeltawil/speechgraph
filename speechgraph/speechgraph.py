@@ -25,7 +25,7 @@ class _graphStatistics():
 		res['degree_std'] =  np.std(degrees)
 		
 		
-		adj_matrix = nx.linalg.adj_matrix(graph).toarray()
+		adj_matrix = nx.linalg.adjacency_matrix(graph).toarray()
 		adj_matrix2 = np.dot( adj_matrix , adj_matrix)
 		adj_matrix3 = np.dot( adj_matrix2 , adj_matrix)
 		
