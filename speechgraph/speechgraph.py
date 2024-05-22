@@ -20,7 +20,7 @@ class _graphStatistics():
 		res['LCC'] =  nx.algorithms.components.number_weakly_connected_components(graph)
 		res['LSC'] =  nx.algorithms.components.number_strongly_connected_components(graph)
 		
-		degrees = list(graph.degree().values())
+		degrees = list(dict(graph.degree()).values())
 		res['degree_average'] =  np.mean(degrees)
 		res['degree_std'] =  np.std(degrees)
 		
