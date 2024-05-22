@@ -16,11 +16,11 @@ class _graphStatistics():
 		graph = self.graph
 		res['number_of_nodes'] = graph.number_of_nodes()
 		res['number_of_edges'] = graph.number_of_edges()
-		res['PE'] =  (np.array(list(Counter(graph.edges()).itervalues()))>1).sum()
+		res['PE'] =  (np.array(list(Counter(graph.edges()).values()))>1).sum()
 		res['LCC'] =  nx.algorithms.components.number_weakly_connected_components(graph)
 		res['LSC'] =  nx.algorithms.components.number_strongly_connected_components(graph)
 		
-		degrees = list(graph.degree().itervalues())
+		degrees = list(graph.degree().values())
 		res['degree_average'] =  np.mean(degrees)
 		res['degree_std'] =  np.std(degrees)
 		
